@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple - Think Different</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004499;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+            padding: 0 15px;
+        }
+        
+        .logo img {
+            height: 20px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #fff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #000;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://www.apple.com/v/home/be/images/heroes/iphone-15-pro/hero_iphone15pro_spring__bu4wsm1b185e_large.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #0071e3;
+            color: #fff;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0077ed;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #0071e3;
+            border: none;
+        }
+        
+        .btn-secondary:hover {
+            text-decoration: underline;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background-color: #f5f5f7;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: #f5f5f7;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #f5f5f7;
+        }
+        
+        .team-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .team-title {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 15px;
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 80px 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .video-section h2 {
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 506px;
+            border-radius: 12px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #f5f5f7;
+        }
+        
+        .contact-content {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #0071e3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f5f5f7;
+            padding: 20px 0;
+            border-top: 1px solid #d2d2d7;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #86868b;
+            margin-top: 10px;
+        }
+        
+        .creator {
+            font-size: 12px;
+            color: #1d1d1f;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 10px;
+            }
+            
+            nav ul li {
+                margin: 0 8px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .video-container iframe {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            
+            .section-heading {
+                font-size: 32px;
+            }
+            
+            .video-container iframe {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="https://www.apple.com/ac/globalnav/7/en_US/images/be-globalnav/globalnav_apple_image__b5er5ngrzxqq_large.svg" alt="Apple Logo">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#vision">Vision</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>iPhone 15 Pro</h1>
+            <p>Titanium. So strong. So light. So Pro.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Buy</button>
+                <button class="btn btn-secondary">Learn more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-heading">Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009279096" alt="iPhone 15 Pro" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">iPhone 15 Pro</h3>
+                        <p class="product-desc">The most powerful iPhone ever with A17 Pro chip and customizable Action button.</p>
+                        <a href="#">Learn more &rarr;</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664472289661" alt="MacBook Air" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">MacBook Air</h3>
+                        <p class="product-desc">Supercharged by Apple Silicon, with incredible battery life and a stunning Retina display.</p>
+                        <a href="#">Learn more &rarr;</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1693593632611" alt="AirPods Pro" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">AirPods Pro</h3>
+                        <p class="product-desc">Active Noise Cancellation, Transparency mode, and immersive sound experience.</p>
+                        <a href="#">Learn more &rarr;</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-vision-pro-category-202401?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1702397747910" alt="Vision Pro" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Vision Pro</h3>
+                        <p class="product-desc">A revolutionary spatial computer that transforms how you connect, create, and explore.</p>
+                        <a href="#">Learn more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Aerial_view_of_Apple_Park_dllu.jpg/1280px-Aerial_view_of_Apple_Park_dllu.jpg" alt="Apple Park">
+                </div>
+                <div class="about-text">
+                    <h2>About Apple</h2>
+                    <p>Apple Inc. is an American multinational technology company that specializes in consumer electronics, software and online services. Apple is the largest technology company by revenue and, as of June 2024, the world's most valuable company.</p>
+                    <p>Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in 1976 to develop and sell Wozniak's Apple I personal computer. It was incorporated by Jobs and Wozniak as Apple Computer, Inc. in 1977, and sales of its computers saw significant momentum and revenue growth for the company.</p>
+                    <p>Today, Apple leads innovation with iPhone, iPad, Mac, Apple Watch, Apple Vision Pro, and Apple TV. Apple's software platforms provide seamless experiences across all devices and empower people with breakthrough services including the App Store, Apple Music, Apple Pay, and iCloud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-heading">Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://th.bing.com/th/id/OIP.AVaKKxsnq37CyX5tSHG5-gHaGL?pid=ImgDetMain" alt="Tim Cook" class="team-photo">
+                    <h3 class="team-name">Tim Cook</h3>
+                    <p class="team-title">Chief Executive Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://th.bing.com/th/id/OIP.QIK9XawfJ9FTXz7KnHEJewHaE8?pid=ImgDetMain" alt="Craig Federighi" class="team-photo">
+                    <h3 class="team-name">Craig Federighi</h3>
+                    <p class="team-title">Senior VP, Software Engineering</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://th.bing.com/th/id/OIP.t58JjCzx7kmr0_ue2UfVbQHaE8?pid=ImgDetMain" alt="Katherine Adams" class="team-photo">
+                    <h3 class="team-name">Katherine Adams</h3>
+                    <p class="team-title">Senior VP, General Counsel</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://th.bing.com/th/id/OIP.wBITuANHZJ8c2HDGTLUQWQHaLH?pid=ImgDetMain" alt="John Ternus" class="team-photo">
+                    <h3 class="team-name">John Ternus</h3>
+                    <p class="team-title">Senior VP, Hardware Engineering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="vision" class="video-section">
+        <div class="container">
+            <h2 class="section-heading">Our Vision</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Q_EYoV1kZWk?si=KWE4BNevU657xVkm" title="Apple Intelligence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-heading">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Have questions about our products or services? Our team is ready to help you with any inquiries you might have.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <span>media.help@apple.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <span>(408) 974-2042</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <span>Apple Park, Cupertino, CA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    Copyright © 2025 Apple Inc. All rights reserved.
+                </div>
+                <div class="creator">
+                    Created by Mahesh Raju
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
